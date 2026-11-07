@@ -1,6 +1,7 @@
 # series-homework
 
 About the Project
+
 This project uses JavaScript to work with TV series, seasons, and episodes.
 We use functions to search, filter, sort, and update data without changing the original data.
 
