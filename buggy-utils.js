@@ -4,7 +4,16 @@ export const getEpisodeById = (season, idText) =>
   season.episodes.find(episode => episode.id === Number(idText));
 
 export const addEpisodeToFirstSeason = (show, episode) => {
-  const firstSeason = show.seasons[0];
-  firstSeason.episodes.push(episode);
-  return { ...show };
+  return {
+    ...show,
+    seasons: show.seasons.map((season, index) => {
+      if (index === 0) {
+        return {
+          ...season,
+          episodes: [...season.episodes, episode]
+        };
+      }
+      return season;
+    })
+  };
 };
